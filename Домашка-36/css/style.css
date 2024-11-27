@@ -1,0 +1,21 @@
+.main {
+    background: #ede2f0;
+    overflow: auto;
+    height: 450px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: groove #000000;
+}
+
+.child {
+    background: #d4b470cb;
+    display: inline-block;
+    width: 220px;
+    height: 200px;
+    box-sizing: border-box;
+    padding: 5px 10px 10px 15px;
+    margin: 10px 5px 5px 5px;
+    border: solid #837454cb;
+    border-radius: 20px;
+    box-shadow: inset 5px 5px 20px #5a4c2dcb;
+}

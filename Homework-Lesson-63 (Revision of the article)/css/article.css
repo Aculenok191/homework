@@ -47,7 +47,12 @@ p {
 }
 
 .info {
+  max-width: 232px;
+  font-size: 14px;
   margin-bottom: 8px;
+  text-transform: uppercase;
+  text-shadow: 0 4px 4px #00000040;
+  color: #858E8A;
 }
 
 .tel {

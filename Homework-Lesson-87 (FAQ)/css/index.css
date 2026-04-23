@@ -1,0 +1,189 @@
+.hero {
+  position: relative;
+  padding-top: 80px;
+}
+
+/* Потому-что внизу секции */
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 106px;
+  /* За фото */
+  z-index: -1;
+  /* На всю ширину страницы */
+  width: 100%;
+  height: 48px;
+  /* Чтобы дублировался по оси х (если что-то пойдет не так) */
+  background: url("../images/decor-large-icon.svg") repeat-x;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.hero h1 {
+  margin-bottom: 40px;
+  font-family: Oswald, sans-serif;
+  font-weight: 600;
+  font-size: 62px;
+  line-height: 115%;
+  text-transform: uppercase;
+  color: #2c332f;
+}
+
+.hero h1 strong {
+  font-weight: 600;
+  color: #3596ed;
+}
+
+.hero-info .text {
+  /* Правильный перенос слов */
+  max-width: 440px;
+  margin-bottom: 140px;
+}
+
+.hero-images {
+  position: relative;
+  display: flex;
+}
+
+.hero-choose {
+  position: absolute;
+  /* расположение */
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 161px;
+  padding: 22px;
+  background: rgb(255 255 255 / 0.9);
+  border: 1px solid #535755;
+  text-align: center;
+}
+
+.nesw-article {
+  /* Чтобы кнопка подробнее всегда была на одном уровне с другими карточками */
+  display: flex;
+  flex-direction: column;
+  max-width: 284px;
+  background-color: #fff;
+  border: 1px solid #d3cbd9;
+  /* Изображение не выходит за пределы контейнера */
+  overflow: hidden;
+}
+
+.news-container {
+  display: flex;
+  gap: 28px;
+}
+
+.nesw-article img {
+  display: block;
+}
+
+.news-info {
+  padding: 20px 20px 0;
+  margin-bottom: 12px;
+}
+
+.news-date {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.nesw-article footer {
+  padding: 0 20px 20px;
+  /* Чтобы кнопка подробнее всегда была на одном уровне с другими карточками */
+  margin-top: auto;
+}
+
+.news-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #3596ed;
+}
+
+.news-link::after {
+  display: inline-block;
+  /* Обязательно */
+  content: "";
+  width: 22px;
+  height: 9px;
+  background-image: url("../images/arrow-right-icon.svg");
+  transition: transform 0.2s;
+}
+
+.news-link:hover::after {
+  transform: translateX(5px);
+}
+
+.faq {
+  position: relative;
+}
+
+.faq::before {
+  content: "";
+  content: "";
+  position: absolute;
+  top: 215px;
+  /* За фото */
+  z-index: -1;
+  /* Задаем ширину и таким образом обрезаем декор */
+  width: calc(50% - 250px);
+  height: 48px;
+  /* Чтобы дублировался по оси х (если что-то пойдет не так) */
+  background: url("../images/decor-large-icon.svg") repeat-x;
+}
+
+.faq-container {
+  display: flex;
+  gap: 28px;
+}
+
+details {
+  margin-bottom: 20px;
+  /* Бордер сразу снизу и сверху  */
+  border-block: 1px solid #d3cbd9;
+}
+
+/* Чтобы стрелка переворачивалась при открытии */
+details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+/* Скрываем иконку-маркер в summary (может не работать в некоторый браузерах) */
+summary {
+  /* Чтобы стрелки раскидать по бокам  */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  list-style: none;
+  padding: 20px;
+  cursor: pointer;
+}
+
+/* Добавляем стрелку */
+summary::after {
+  content: "";
+  display: inline-block;
+  width: 17px;
+  height: 22px;
+  background: url("../images/arrow-down-icon.svg") no-repeat center / cover;
+}
+
+/* Добавляем - работает везде */
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Паддинги для текста, что бы текст не вылазил */
+/* > Обращаем к прямым дочерним элементам */
+details > p {
+  padding: 0 20px 20px;
+}

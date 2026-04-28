@@ -1,0 +1,30 @@
+@media (width > 768px) {
+  .burger {
+    display: none;
+  }
+}
+
+@media (width <= 768px) {
+  .burger {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--layer-3);
+    width: 24px;
+    height: 24px;
+  }
+
+  /* когда меню открыто будем показывать крестик для закрытия */
+  .burger__icon-menu, 
+  .burger--open .burger__icon-cross {
+    display: block;
+  }
+
+  /* по умолчанию скрываем крестик которым будем закрывать меню бургер */
+  /* если открыт бургер тогда мы скрываем иконку бургер меню */
+  .burger__icon-cross,
+  .burger--open .burger__icon-menu {
+    display: none;
+  }
+}

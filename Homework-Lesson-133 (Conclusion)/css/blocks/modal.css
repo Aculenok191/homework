@@ -1,0 +1,85 @@
+.modal {
+  /* переменить переменную, что бы окно открывалось быстрее */
+  --transition-time: 0.2s;
+  /* делаем фон который будет появляться за формой при открытии */
+  position: fixed;
+  /* растянем на весь экран */
+  inset: 0;
+  z-index: var(--layer-3);
+  width: 100%;
+  height: 100%;
+  /* чтобы можно было прокручивать */
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: var(--overlay);
+  text-align: center;
+  /* это для js */
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition:
+    opacity var(--transition-time),
+    visibility var(--transition-time);
+  -o-transition:
+    opacity var(--transition-time),
+    visibility var(--transition-time);
+  transition:
+    opacity var(--transition-time),
+    visibility var(--transition-time);
+}
+
+/* для js */
+.modal--open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* позволяет грамотно отцентрировать окно в не зависимости от высоты */
+.modal::before {
+  content: "";
+  display: inline-block;
+  /* чтобы отталкивать модальное окно */
+  height: 100%;
+  /* позволяет по вертикали позиционировать элемент относительно родителя */
+  vertical-align: middle;
+}
+
+/* позволяет грамотно отцентрировать окно в не зависимости от высоты */
+.modal__window {
+  position: relative;
+  /* если несколько модальных окон -- для js  */
+  display: none;
+  margin-block: 50px;
+  /* позволяет по вертикали позиционировать элемент относительно родителя */
+  vertical-align: middle;
+  border-radius: 12px;
+  background-color: var(--bg-color);
+  -webkit-box-shadow: 0 0 20px var(--shadow-color);
+  box-shadow: 0 0 20px var(--shadow-color);
+}
+
+@media (width > 576px) {
+  .modal__window {
+    padding: 100px 50px;
+  }
+}
+
+@media (width <= 576px) {
+  .modal__window {
+    padding: 80px 30px;
+    width: 90%;
+  }
+}
+
+/* для js */
+.modal__window--open {
+  display: inline-block;
+}
+
+/* позиционируем крестик для закрытия окна */
+.modal__close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  width: 24px;
+  height: 24px;
+}

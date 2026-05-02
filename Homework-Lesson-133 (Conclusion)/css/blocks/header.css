@@ -1,0 +1,243 @@
+.header {
+  /* fixed cap when scrolling */
+  position: fixed;
+  /* up */
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: var(--layer-1);
+
+  padding-block: 32px;
+
+  /* background */
+  background-color: var(--bg-color);
+
+  /* shadow */
+  -webkit-transition: -webkit-box-shadow var(--transition-time);
+  transition: -webkit-box-shadow var(--transition-time);
+  -o-transition: box-shadow var(--transition-time);
+  transition: box-shadow var(--transition-time);
+  transition:
+    box-shadow var(--transition-time),
+    -webkit-box-shadow var(--transition-time);
+  background: var(--bg-color);
+}
+
+.header--fixed {
+  /* чтобы тень была только при скроле */
+  -webkit-box-shadow: 0 0 20px var(--shadow-color);
+  box-shadow: 0 0 20px var(--shadow-color);
+  /* при прокрутки страницы тени не будет */
+  overflow-y: hidden;
+}
+
+.header__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+@media (width > 768px) {
+  .header__logo {
+    /* чтобы при адаптиве отступ становился меньше */
+    /* min-width 992px, max-width 1440px */
+    margin-right: clamp(25px, -11.585rem + 21.21vw, 120px);
+  }
+
+  .header__menu {
+    /* чтобы растянуть меню на доступное пространство  */
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+  }
+}
+
+@media (width <= 768px) {
+  .header__menu {
+    /* чтобы менюшку можно было открыть при прокрутке  */
+    position: fixed;
+    /* чтобы всегда была с вверху */
+    top: 0;
+    /* чтобы сделать анимацию менюшки */
+    right: -100vw;
+    /* чтоб она была на всю высоту видимой части страницы */
+    bottom: 0;
+    z-index: var(--layer-2);
+    min-width: 297px;
+    padding: 144px 15px 20px 0;
+    background-color: var(--bg-color);
+    -webkit-box-shadow: -2px 0 20px var(--shadow-color);
+    box-shadow: -2px 0 20px var(--shadow-color);
+    /* чтобы можно было прокручивать */
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition:
+      right var(--transition-time),
+      opacity var(--transition-time),
+      visibility var(--transition-time);
+    -o-transition:
+      right var(--transition-time),
+      opacity var(--transition-time),
+      visibility var(--transition-time);
+    transition:
+      right var(--transition-time),
+      opacity var(--transition-time),
+      visibility var(--transition-time);
+  }
+
+  /* когда открываем меню */
+  .header__menu--open {
+    right: 0;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .header__menu .menu__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    text-align: end;
+  }
+}
+
+.header__controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+@media (width > 992px) {
+  .header__controls {
+    gap: 60px;
+  }
+}
+
+@media (width <= 992px) {
+  .header__controls {
+    gap: 30px;
+  }
+}
+
+.header__order {
+  /* позиционируем элемент, чтобы всегда был прикреплен к ссылке */
+  position: relative;
+
+  padding-bottom: 5px;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 130%;
+  color: var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
+}
+
+@media (any-hover: hover) {
+  /* анимация для кнопки заказать */
+  .header__order:hover::before {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* свечение для кнопки заказа */
+.header__order::before {
+  content: "";
+  /* позиционируем элемент, чтобы всегда был прикреплен к ссылке */
+  position: absolute;
+  /* размеры которые будут подходить под адаптив  */
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 90%;
+  min-height: 11px;
+  /* центрируем свечение  */
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  /* свойство которое позволяет задать размытие */
+  -webkit-filter: blur(30px);
+  filter: blur(30px);
+  /* для того чтобы изначально скрыть анимацию */
+  opacity: 0;
+  visibility: hidden;
+  /* для появления анимации */
+  -webkit-transition:
+    opacity var(--transition-time),
+    visibility var(--transition-time);
+  -o-transition:
+    opacity var(--transition-time),
+    visibility var(--transition-time);
+  transition:
+    opacity var(--transition-time),
+    visibility var(--transition-time);
+}
+
+/* Иконки  */
+.header__actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+
+@media (width > 768px) {
+  /* Иконки  */
+  .header__actions {
+    gap: 20px;
+  }
+}
+
+@media (width <= 768px) {
+  /* Иконки  */
+  .header__actions {
+    gap: 30px;
+  }
+}
+
+.header__actions-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--main-color);
+  -webkit-transition: color var(--transition-time);
+  -o-transition: color var(--transition-time);
+  transition: color var(--transition-time);
+}
+
+@media (any-hover: hover) {
+  .header__actions-button:hover {
+    color: var(--accent-color);
+  }
+}
+
+/* при нажатии будет появляется состояние активности  */
+.header__actions-button:active {
+  color: var(--accent-color);
+}
+
+.header__actions-icon {
+  stroke: currentColor;
+}

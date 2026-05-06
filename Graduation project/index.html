@@ -1,0 +1,192 @@
+<!doctype html>
+<html class="page" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+    <link
+      rel="shortcut icon"
+      href="./icon/favicon-icon.png"
+      type="image/x-icon"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"
+      defer
+    ></script>
+    <script src="./js/index.js" type="module"></script>
+    <title>Mobile phones and gadgets</title>
+  </head>
+  <body class="page__body">
+    <header class="header header--fixed">
+      <div class="container header__container">
+        <a class="logo header__logo" href="#">
+          <img
+            class="logo__img"
+            src="./icon/logo-icon.svg"
+            width="170"
+            height="21"
+            alt="Logo California"
+          />
+        </a>
+        <nav class="menu header__menu" id="header__menu" aria-label="Main menu">
+          <ul class="menu__list menu__list-animation">
+            <li class="menu__item menu__item-animation">
+              <a class="menu__link menu__link-animation" href="#all-products"
+                >all products</a
+              >
+            </li>
+            <li class="menu__item menu__item--open menu__item-animation">
+              <a class="menu__link menu__item-1 menu__link-animation" href="#"
+                >Solutions</a
+              >
+              <svg class="menu__icon" width="12" height="8">
+                <use
+                  class="menu__icon-img menu__icon-animation"
+                  href="./icon/sprite-arrows.svg#arrow-bottom"
+                ></use>
+              </svg>
+              <div class="submenu">
+                <ul class="menu__list-animation submenu__list">
+                  <li class="menu__item-animation submenu__item">
+                    <a class="submenu__link menu__link-animation" href="#"
+                      >Delivery</a
+                    >
+                  </li>
+                  <li class="menu__item-animation submenu__item">
+                    <a class="submenu__link menu__link-animation" href="#"
+                      >Loans</a
+                    >
+                  </li>
+                  <li class="menu__item-animation submenu__item">
+                    <a class="submenu__link menu__link-animation" href="#"
+                      >Guarantee</a
+                    >
+                  </li>
+                  <li class="menu__item-animation submenu__item">
+                    <a class="submenu__link menu__link-animation" href="#"
+                      >Refund</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="menu__item menu__item-animation">
+              <a class="menu__link menu__link-animation" href="#">About</a>
+            </li>
+            <li class="menu__item menu__item-animation">
+              <a class="menu__link menu__link-animation" href="#">Support</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__controls">
+          <button
+            class="header__controls-button"
+            title="Search"
+            aria-label="Search"
+          >
+            <svg width="24" height="24">
+              <use
+                class="header__controls-icon"
+                href="./icon/sprite-nav.svg#search"
+              ></use>
+            </svg>
+          </button>
+          <button
+            class="header__controls-button"
+            title="Cart"
+            aria-label="Cart"
+          >
+            <svg width="24" height="24">
+              <use
+                class="header__controls-icon"
+                href="./icon/sprite-nav.svg#cart"
+              ></use>
+            </svg>
+          </button>
+          <button
+            class="header__burger burger"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="header__menu"
+          >
+            <svg width="24" height="24">
+              <use
+                class="burger__icon-burger"
+                href="./icon/sprite-nav.svg#burger"
+              ></use>
+              <use
+                class="burger__icon-cross"
+                href="./icon/sprite-nav.svg#cross"
+              ></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+    <mein class="mein">
+      <section class="product">
+        <div class="container product__slider-wrapper">
+          <!-- для создания слайдера -->
+          <div class="swiper product__slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="product__slide-inner">
+                  <div class="product__slide-title">
+                    <h1 class="product__slide-heading title-xxl">
+                      The new phones are here take a look.
+                    </h1>
+                    <p class="product__slide-info title-md">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Scelerisque in est dui, aliquam, tempor. Faucibus morbi
+                      turpis.
+                    </p>
+                    <a href="#" class="product__slide-button-link">Explore</a>
+                  </div>
+                  <picture>
+                    <source srcset="./images/hero-gadgets-1.webp" />
+                    <img
+                      src="./images/hero-gadgets-1.png"
+                      class="product__slide-img"
+                      width="647"
+                      height="550"
+                      alt="Кроссовки Nike Air Mag, вид спереди"
+                    />
+                  </picture>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product__slide-inner">
+                  <div class="product__slide-title">
+                    <h1 class="product__slide-heading title-xxl">
+                      The new phones are here take a look.
+                    </h1>
+                    <p class="product__slide-info title-md">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Scelerisque in est dui, aliquam, tempor. Faucibus morbi
+                      turpis.
+                    </p>
+                    <a href="#" class="product__slide-button-link">Explore</a>
+                  </div>
+                  <picture>
+                    <source srcset="./images/hero-gadgets-1.webp" />
+                    <img
+                      src="./images/hero-gadgets-1.png"
+                      class="product__slide-img"
+                      width="647"
+                      height="550"
+                      alt="Кроссовки Nike Air Mag, вид сзади"
+                    />
+                  </picture>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </mein>
+  </body>
+</html>

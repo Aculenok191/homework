@@ -1,0 +1,117 @@
+.menu__list {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+@media (width > 992px) {
+  .menu__list {
+    gap: 44px;
+  }
+}
+
+@media (width <= 992px) {
+  .menu__list {
+    gap: 34px;
+  }
+}
+
+.menu__link-animation {
+  position: relative;
+  font-size: 14px;
+  line-height: 120%;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: var(--secondary-color);
+  transition:
+    color var(--transition-time),
+    border-color var(--transition-time);
+}
+
+.menu__link-animation:after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  right: 0;
+  height: 1.5px;
+  width: 100%;
+  transform: scale(0, 1);
+  transition: transform var(--transition-time);
+  background: var(--accent-color);
+  transform-origin: left top;
+}
+
+.menu__link-animation:hover:after {
+  transform: scale(1, 1);
+  transform-origin: left top;
+}
+
+/* Чтобы при нажатии hover не оставался */
+@media (any-hover: hover) {
+  .menu__link-animation:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+  }
+}
+
+.menu__list {
+  position: relative;
+}
+
+.menu__icon {
+  position: relative;
+  margin-left: 3px;
+  cursor: pointer;
+}
+
+.submenu {
+  display: flex;
+  justify-content: center;
+  z-index: var(--layer-2);
+}
+
+.submenu__list {
+  display: none;
+  position: absolute;
+  margin-top: 6.5px;
+  background-color: var(--main-color);
+  transition: display var(--transition-time);
+}
+
+.menu__item--open:hover {
+  z-index: var(--layer-2);
+}
+
+@media (width > 768px) {
+  .submenu__list {
+    position: fixed;
+    padding: 10px 15px;
+    background-color: var(--main-color);
+    /* box-shadow: -2px 0 20px var(--shadow-color); */
+    border: 1px solid var(--secondary-color);
+    border-radius: 16px;
+    z-index: var(--layer-2);
+  }
+}
+
+@media (width <= 768px) {
+  .submenu__list {
+    position: relative;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: end;
+    padding-right: 19px;
+  }
+
+  .submenu__link {
+    margin-bottom: 20px;
+  }
+}
+
+.submenu__item {
+  padding-bottom: 10px;
+}
+
+.menu__item--open:hover .submenu__list {
+  display: initial;
+}
